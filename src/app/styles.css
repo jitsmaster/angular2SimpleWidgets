@@ -1,0 +1,37 @@
+.panel-heading {
+	cursor:pointer;
+}
+
+.panel-heading .arrow {
+	display: inline-block;
+	width:14px;
+	height: 14px;
+	transform: rotate(45deg);
+	border-top: 2px solid blue;
+	border-right: 2px solid blue;
+	transition: all linear .4s;
+}
+
+.panel-heading .arrow.pointdown {
+	transform: rotate(135deg);
+}
+
+.panel-heading.openTitle::before {
+	content: "^";
+}
+
+.panel-heading .panel-title {
+	display: inline-block;
+	margin-left:10px;
+}
+
+.panel-body {
+	max-height: 1000px;
+	transition: all linear 0.4s;
+}
+
+.panel-body.hidebody {
+	padding: 0 15px;
+	overflow: hidden;
+	max-height: 0;
+}

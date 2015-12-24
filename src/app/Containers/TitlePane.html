@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+  <div class="panel-heading"
+    (click)="toggle()">
+    <span class="arrow" [class.pointdown]="visible"></span>
+    <h3 class="panel-title">{{title}}</h3>   
+  </div>
+  <div class="panel-body" [class.hidebody]="!visible">
+    <ng-content></ng-content>
+  </div>
+</div>

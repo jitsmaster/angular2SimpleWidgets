@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    base(href="/")
+    title= title
+    link(rel='stylesheet', href='/scripts/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='./app/styles.css')
+    script( src='/scripts/angular2/bundles/angular2-polyfills.js')
+    script( src='/scripts/systemjs/dist/system.src.js')
+    script( src='/scripts/angular2/bundles/angular2.dev.js')
+    script( src='/scripts/rxjs/bundles/Rx.min.js')
+    script( src='/scripts/angular2/bundles/http.dev.js')
+    script( src="/scripts/angular2/bundles/router.dev.js")
+    script.
+      System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/boot')
+            .then(null, console.error.bind(console));
+  body
+    block content
