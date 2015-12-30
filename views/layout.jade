@@ -8,7 +8,7 @@ html
     script( src='/scripts/angular2/bundles/angular2-polyfills.js')
     script( src='/scripts/systemjs/dist/system.src.js')
     script( src='/scripts/angular2/bundles/angular2.dev.js')
-    script( src='/scripts/rxjs/bundles/Rx.min.js')
+    script( src='/scripts/rxjs/bundles/Rx.js')
     script( src='/scripts/angular2/bundles/http.dev.js')
     script( src="/scripts/angular2/bundles/router.dev.js")
     script.
@@ -17,8 +17,16 @@ html
           app: {
             format: 'register',
             defaultExtension: 'js'
-          }
-        }
+          }/*,
+          'rxjs': {
+            format: 'register',
+            defaultExtension: 'js'
+          }*/
+        }/*,
+        paths: {
+            'rxjs/operator/*': '/scripts/rxjs/add/operator/*.js',
+            'rxjs/*': '/scripts/rxjs/*.js'
+        }*/
       });
       System.import('app/boot')
             .then(null, console.error.bind(console));
