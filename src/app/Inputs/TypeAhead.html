@@ -1,0 +1,17 @@
+<div class="input-group">
+    <span class="input-group-addon" id="symbol-input">Search Stock:</span>
+    <input type="text" class="form-control" placeholder="Search for Symbol..." #symbol 
+    value="{{selectedStock}}"
+    [ngFormControl]="searchText" aria-describedby="symbol-input">
+</div>
+<table class="table table-striped">
+    <tbody>
+        <tr *ngFor="#tick of tickers | async">
+            <td>{{tick.symbol}}</td>
+            <td>{{tick.company_name}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" (click)="onSelect(tick)">Toogl</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
